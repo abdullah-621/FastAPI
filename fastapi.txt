@@ -1,0 +1,3 @@
+uvicorn main:app --reload
+
+(--reload) ->> when you read something is your code this reload function a autometically reload your page. You dont need to reload further.
