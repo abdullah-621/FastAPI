@@ -4,7 +4,8 @@ from fastapi.responses import JSONResponse
 from pydantic import BaseModel, Field, computed_field
 from typing import Annotated, Literal
 
-# pydantic model
+# todo ->>>>> pydantic model
+
 class Patient(BaseModel):
 
   id : Annotated[str, Field(..., description="ID of the patient", examples=["P001"])]
@@ -32,8 +33,10 @@ class Patient(BaseModel):
       return "Overweight"
     else:
       return "Obesity"
+# todo ->>>>> pydantic model
 
 
+# todo ->>>>>>>>>>>>>>>>>>>>>>>>-<<<<<<<<<<<<<<<<<<<<<<<<<<<<-
 app = FastAPI()
 
 def load_data():
@@ -44,6 +47,9 @@ def load_data():
 def save_data(data):
   with open("patients.json", 'w') as f:
     json.dump(data, f)
+# todo ->>>>>>>>>>>>>>>>>>>>>>>>-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<-
+
+# todo ->>>>>>>> READ part (get) <<<<<<<<<-
 
 @app.get("/")
 def hello(): 
@@ -89,7 +95,10 @@ def sort_patients(sort_by: str = Query(..., description="Sort on the basis of he
 
   return sorted_data
   
+# todo ->>>>>>>>>> READ part <<<<<<<<<<<-
 
+
+# todo ->>>>>>>>>> CREAT part (post) <<<<<<<<<<<<<<-
 # creat Patient
 @app.post("/create")
 def creat_patient(patient : Patient):
@@ -107,3 +116,5 @@ def creat_patient(patient : Patient):
   save_data(data)
 
   return JSONResponse(status_code=201, content={'message' : 'Patient created successfully'})
+
+# todo ->>>>>>>>>> CREAT part <<<<<<<<<<<<-
