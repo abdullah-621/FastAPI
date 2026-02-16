@@ -1,0 +1,12 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Jupyter notebooks
+# *.ipynb
+
+# Virtual environment
+myenv/
+
+# Others
+*.log
