@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>House Price Prediction</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f4f4;
+      padding: 30px;
+    }
+
+    .container {
+      background: white;
+      max-width: 500px;
+      margin: auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    label {
+      font-weight: bold;
+      display: block;
+      margin-top: 10px;
+    }
+
+    input,
+    select {
+      width: 100%;
+      padding: 8px;
+      margin-top: 5px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      width: 100%;
+      margin-top: 20px;
+      padding: 10px;
+      background: green;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+
+    button:hover {
+      background: darkgreen;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="container">
+    <h2>House Price Prediction</h2>
+
+    <form method="post" action="/predict" id="houseForm">
+      <label>Area</label>
+      <input type="number" name="area" step="0.01" required>
+
+      <label>Bedrooms</label>
+      <input type="number" name="bedrooms" required>
+
+      <label>Bathrooms</label>
+      <input type="number" name="bathrooms" required>
+
+      <label>Stories</label>
+      <input type="number" name="stories" required>
+
+      <label>Main Road (0/1)</label>
+      <select name="mainroad">
+        <option value="1">1 (Yes)</option>
+        <option value="0">0 (No)</option>
+      </select>
+
+      <label>Guest Room (0/1)</label>
+      <select name="guestroom">
+        <option value="1">1 (Yes)</option>
+        <option value="0">0 (No)</option>
+      </select>
+
+      <label>Basement (0/1)</label>
+      <select name="basement">
+        <option value="1">1 (Yes)</option>
+        <option value="0">0 (No)</option>
+      </select>
+
+      <label>Hot Water Heating (0/1)</label>
+      <select name="hotwaterheating">
+        <option value="1">1 (Yes)</option>
+        <option value="0">0 (No)</option>
+      </select>
+
+      <label>Air Conditioning (0/1)</label>
+      <select name="airconditioning">
+        <option value="1">1 (Yes)</option>
+        <option value="0">0 (No)</option>
+      </select>
+
+      <label>Parking</label>
+      <input type="number" name="parking" required>
+
+      <label>Preferred Area (0/1)</label>
+      <select name="prefarea">
+        <option value="1">1 (Yes)</option>
+        <option value="0">0 (No)</option>
+      </select>
+
+      <button type="submit">Predict Price</button>
+    </form>
+
+  </div>
+
+</body>
+
+</html>
