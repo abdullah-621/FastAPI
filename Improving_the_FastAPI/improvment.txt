@@ -1,0 +1,10 @@
+1. Create New Folder
+2. Field validator for city
+3. Add route
+    * home route
+    * health check
+4. Add model version
+5. Separation of logic
+    * pydantic model
+    * City tier
+    * Ml Logic
